@@ -8,7 +8,7 @@ class studentadmin(admin.ModelAdmin):
 admin.site.register(student,studentadmin)
 
 class markadmin(admin.ModelAdmin):
-    list_display = ('id','Tamil','English','Computer', 'student1')
+    list_display = ('id','subject','mark','student1')
 
 admin.site.register(mark,markadmin)   
 # Register your models here.

@@ -4,18 +4,24 @@
 <table border = 1>
 <tr>
 <th>id</th>
-<th>Tamil</th>
-<th>English</th>
-<th>Computer</th>
+<th>subject</th>
+<th>mark</th>
+<th>created_at</th>
+<th>updated_at</th>
+<th>create_name</th>
+<th>modify_name</th>
 <th>update</th>
 <th>delete</th>
 </tr>
 {% for i in item %}
 <tr>
 <td>{{i.student1_id}}</td>
-<td>{{i.Tamil}}</td>
-<td>{{i.English}}</td>
-<td>{{i.Computer}}</td>
+<td>{{i.subject}}</td>
+<td>{{i.mark}}</td>
+<td>{{i.created_at}}</td>
+<td>{{i.updated_at}}</td>
+<td>{{i.create_name}}</td>
+<td>{{i.modify_name}}</td>
 <td><a href = "http://127.0.0.1:8000/apps/markupdate/{{i.id}}"><button style = "background-color:yellow">update</button></a></td>
 <td><a href = "http://127.0.0.1:8000/apps/markdelete/{{i.id}}"><button style = "background-color:yellow">delete</button></a></td>
 </tr>

@@ -9,9 +9,10 @@ class student(models.Model):
     
 class mark(models.Model):
     student1 = models.ForeignKey(student, on_delete = models.CASCADE)
-    Tamil = models.IntegerField(null = True)
-    English = models.IntegerField(null = True)
-    Computer = models.IntegerField(null = True)
-    
-
+    subject = models.CharField(max_length=50, null = True)
+    mark = models.IntegerField(null = True)
+    created_at = models.DateTimeField(auto_now_add=True, null = True)
+    updated_at = models.DateTimeField(auto_now=True, null = True)
+    create_name = models.CharField(max_length=50, null = True)
+    modify_name = models.CharField(max_length=50, null = True)
 # Create your models here.
