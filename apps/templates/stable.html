@@ -23,7 +23,9 @@
 </tr>
 {% endfor %}
 </table>
-<a href = "http://127.0.0.1:8000/apps/add/"><button>Add</button></a>
+<a href = "http://127.0.0.1:8000/apps/add/"><button style = "color:blue">Add</button></a>
+<a href="{% url 'logout' %}"><button style = "color:blue">Logout</button></a> 
+<a href="{% url 'jsondata' %}"><button style = "color:blue">jsondata</button></a> 
 </body>
 </html>
 

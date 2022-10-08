@@ -12,4 +12,4 @@ class studentform(forms.ModelForm):
 class markform(forms.ModelForm):
     class Meta:
         model = mark
-        fields = "__all__"
+        fields = ['student1','subject','mark']
