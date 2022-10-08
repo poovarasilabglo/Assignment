@@ -1,0 +1,11 @@
+<html>
+<body>
+<h1 style = "color:red">update mark</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save">
+</form>
+<a href = "/apps"><button>Back</button>
+</html>
+</body>

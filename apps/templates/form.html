@@ -1,0 +1,11 @@
+<html>
+<body>
+<h1 style = "color:red">student form create</h1>
+<form method = "POST" enctype="multipart/form-data">
+{% csrf_token%}
+{{form.as_p}}
+<button>submit</button>
+</form>
+<a href = "/apps"><button>student_table</button></a>
+</body>
+</html>

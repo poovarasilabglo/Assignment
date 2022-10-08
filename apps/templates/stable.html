@@ -1,0 +1,29 @@
+<html>
+<body>
+<h1 style = "color:red">student full table<h1>
+<table border=1>
+<tr style = "color:green">
+<th>id</th>
+<th>name</th>
+<th>img</th>
+<th>dob</th>
+<th>marks</th>
+<th>Update</th>
+<th>Delete</th>
+</tr>
+{% for x in item %}
+<tr>
+<td>{{x.id}}</td>
+<td>{{x.name}}</td>
+<td><img src ="{{x.img.url}}" alt = "{{x.name}}" width =50px height = 50px></td>
+<td>{{x.dob}}</td>
+<td><a href = "http://127.0.0.1:8000/apps/detail/{{x.id}}"><button style = "background-color:yellow">view</button></a></td>
+<td><a href = "http://127.0.0.1:8000/apps/stu/{{x.id}}"><button style = "background-color:yellow">Update</button></a></td>
+<td><a href = "http://127.0.0.1:8000/apps/studentdelete/{{x.id}}"><button style = "background-color:yellow">Delete</button></a></td>
+</tr>
+{% endfor %}
+</table>
+<a href = "http://127.0.0.1:8000/apps/add/"><button>Add</button></a>
+</body>
+</html>
+

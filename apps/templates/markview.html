@@ -1,0 +1,28 @@
+<html>
+<body>
+<h1 style = "color:red">marks view</h1>
+<table border = 1>
+<tr>
+<th>id</th>
+<th>Tamil</th>
+<th>English</th>
+<th>Computer</th>
+<th>update</th>
+<th>delete</th>
+</tr>
+{% for i in item %}
+<tr>
+<td>{{i.student1_id}}</td>
+<td>{{i.Tamil}}</td>
+<td>{{i.English}}</td>
+<td>{{i.Computer}}</td>
+<td><a href = "http://127.0.0.1:8000/apps/markupdate/{{i.id}}"><button style = "background-color:yellow">update</button></a></td>
+<td><a href = "http://127.0.0.1:8000/apps/markdelete/{{i.id}}"><button style = "background-color:yellow">delete</button></a></td>
+</tr>
+{% endfor %}
+</table>
+<br>
+<a href = "/apps"><button>Back</button></a>
+<a href = "/apps/markadd"><button>Add</button></a>
+</body>
+</html>

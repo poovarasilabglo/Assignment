@@ -1,0 +1,11 @@
+<html>
+<body>
+<h1>Add mark Record</h1>
+<form method = 'POST'>
+{% csrf_token %}
+{{form.as_p}}
+<input type ='submit' value = 'submit'>
+</form>
+<input type=button value="Previous Page" onClick="javascript:history.go(-2);">
+</body>
+</html>
