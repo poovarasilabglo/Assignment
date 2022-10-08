@@ -10,6 +10,7 @@ from apps.models import student
 from apps.form import studentform
 from apps.models import mark
 from apps.form import markform
+from django.core import serializers
 
 
 
@@ -36,7 +37,7 @@ def user_logout(request):
 
 
 
-def jsondata(request):
+'''def jsondata(request):
     import json
     data = student.objects.all().values()
     l = []
@@ -45,14 +46,20 @@ def jsondata(request):
     res = json.dumps(l, default = str, indent = 4)
     print(res)
     print(type(res))
-    return HttpResponse(res,content_type='application/json')
+    return HttpResponse(res,content_type='application/json')'''
+
+def jsondata(request):
+    qs = student.objects.all()
+    qs_json = serializers.serialize('json', qs, indent =4)
+    return HttpResponse(qs_json, content_type='application/json')
 
 
 
-def json(request):
-    data = list(mark.objects.values())
-    return JsonResponse(data,safe = False)
-
+def json(request,id):
+    qs = mark.objects.filter(student1_id = id).only()
+    print(qs)
+    qs_json = serializers.serialize('json', qs, indent =4)
+    return HttpResponse(qs_json, content_type='application/json')
 
 
 @login_required(redirect_field_name='/apps/markadd', login_url='/apps')

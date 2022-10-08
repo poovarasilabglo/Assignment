@@ -10,6 +10,7 @@
 <th>marks</th>
 <th>Update</th>
 <th>Delete</th>
+<th>markview</th>
 </tr>
 {% for x in item %}
 <tr>
@@ -17,13 +18,14 @@
 <td>{{x.name}}</td>
 <td><img src ="{{x.img.url}}" alt = "{{x.name}}" width =50px height = 50px></td>
 <td>{{x.dob}}</td>
-<td><a href = "http://127.0.0.1:8000/apps/detail/{{x.id}}"><button style = "background-color:yellow">view</button></a></td>
-<td><a href = "http://127.0.0.1:8000/apps/stu/{{x.id}}"><button style = "background-color:yellow">Update</button></a></td>
-<td><a href = "http://127.0.0.1:8000/apps/studentdelete/{{x.id}}"><button style = "background-color:yellow">Delete</button></a></td>
+<td><a href = "/apps/detail/{{x.id}}"><button style = "background-color:yellow">view</button></a></td>
+<td><a href = "/apps/stu/{{x.id}}"><button style = "background-color:yellow">Update</button></a></td>
+<td><a href = "/apps/studentdelete/{{x.id}}"><button style = "background-color:yellow">Delete</button></a></td>
+<td><a href = "/apps/json/{{x.id}}"><button style = "color:blue">json</button></a></td>
 </tr>
 {% endfor %}
 </table>
-<a href = "http://127.0.0.1:8000/apps/add/"><button style = "color:blue">Add</button></a>
+<a href = "/apps/add/"><button style = "color:blue">Add</button></a>
 <a href="{% url 'logout' %}"><button style = "color:blue">Logout</button></a> 
 <a href="{% url 'jsondata' %}"><button style = "color:blue">jsondata</button></a> 
 </body>
